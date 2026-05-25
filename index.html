@@ -1629,6 +1629,16 @@ function closeExit(){document.getElementById('exitOverlay').classList.remove('sh
     render();
   });
 })();
+
+// Google Ads conversion — dispara em qualquer clique em link Kiwify
+document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(a){
+  a.addEventListener('click',function(){
+    var oc=this.getAttribute('onclick')||'';
+    var m=oc.match(/value[:\s]+([0-9.]+)/);
+    var val=m?parseFloat(m[1]):0;
+    gtag('event','conversion',{'send_to':'AW-18180464775/9GwXCNeLkLEcEIfBj91D','value':val,'currency':'BRL'});
+  });
+});
 </script>
 
 </body>
