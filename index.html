@@ -341,9 +341,28 @@
       .kit-card.popular{transform:none}
       .kit-wrap{padding-top:18px}
       .comp-table{display:none}
-      .sw{padding:60px 16px}
+      .sw{padding:56px 16px}
       .cta-main{font-size:15px;padding:15px 28px}
       body{font-size:16px}
+      /* WA button — sobe acima da sticky bar */
+      .wa{bottom:74px;right:14px;width:50px;height:50px}
+      /* Garantia — padding menor no mobile */
+      .guar-hero{padding:36px 18px}
+      .guar-items{gap:10px}
+      .guar-item{padding:10px 14px;font-size:13px}
+      /* Pain ans */
+      .pain-ans{font-size:15px;padding:12px 18px;text-align:center;justify-content:center}
+      /* Seções catkit e vstack */
+      .catkit-section{padding:56px 16px}
+      .vstack-section{padding:56px 16px}
+      .vstack-left,.vstack-right{padding:20px 16px}
+      /* CTA final */
+      .ctafin{margin:0 10px 56px;padding:64px 16px}
+      /* Trust bar */
+      .tbar{gap:14px;padding:14px 16px}
+      .tsep{display:none}
+      /* Steps */
+      .step{padding:0 12px}
     }
     @media(max-width:900px){.kits-grid{grid-template-columns:1fr}}
 
@@ -1630,13 +1649,82 @@ function closeExit(){document.getElementById('exitOverlay').classList.remove('sh
   });
 })();
 
-// Google Ads conversion — dispara em qualquer clique em link Kiwify
+// --- BRIDGE MODAL (pré-checkout) ---
+var _ckUrl=null, _ckTimer=null;
+
+function abrirCheckout(url,nome,valor){
+  _ckUrl=url;
+  var modal=document.getElementById('_ckBridge');
+  if(!modal){
+    modal=document.createElement('div');
+    modal.id='_ckBridge';
+    modal.style.cssText='display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px';
+    modal.addEventListener('click',function(e){if(e.target===modal)_fecharCkBridge();});
+    document.body.appendChild(modal);
+  }
+  var precoNum=valor?parseFloat(valor):0;
+  var precoOrig=precoNum?'R$'+(precoNum*1.6).toFixed(0):'';
+  var precoAtual=precoNum?'R$'+precoNum.toFixed(2).replace('.',','):'';
+  var end=Date.now()+600000;
+  if(_ckTimer)clearInterval(_ckTimer);
+  _ckTimer=setInterval(function(){
+    var r=Math.max(0,end-Date.now());
+    var m=Math.floor(r/60000),s=Math.floor((r%60000)/1000);
+    var el=document.getElementById('_ckCd');
+    if(el)el.textContent=m+':'+(s<10?'0':'')+s;
+    if(!r)clearInterval(_ckTimer);
+  },1000);
+  modal.innerHTML='<div style="background:linear-gradient(160deg,#0b0f1c,#0f1629);border:1px solid rgba(0,217,126,.25);border-radius:24px;max-width:460px;width:100%;padding:30px 26px;position:relative;box-shadow:0 0 80px rgba(0,217,126,.18)">'
+    +'<button onclick="_fecharCkBridge()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:rgba(255,255,255,.35);font-size:22px;cursor:pointer;line-height:1;padding:4px">✕</button>'
+    +'<div style="background:linear-gradient(90deg,#991b1b,#ef4444);color:#fff;font-size:11px;font-weight:800;letter-spacing:1.5px;text-align:center;padding:9px 14px;border-radius:10px;margin-bottom:20px;text-transform:uppercase">⚡ Oferta reservada por <span id="_ckCd" style="font-variant-numeric:tabular-nums;font-size:13px">10:00</span> min — conclua antes que expire</div>'
+    +'<div style="text-align:center;margin-bottom:18px">'
+    +'<div style="font-size:11px;color:rgba(0,217,126,.75);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px">Você está levando:</div>'
+    +'<div style="font-size:20px;font-weight:900;color:#fff;line-height:1.25">'+(nome||'Kit Digital')+'</div>'
+    +'</div>'
+    +'<div style="background:rgba(0,217,126,.05);border:1px solid rgba(0,217,126,.12);border-radius:14px;padding:15px 18px;margin-bottom:18px;display:flex;flex-direction:column;gap:10px;font-size:13.5px;color:rgba(255,255,255,.8)">'
+    +'<div>✅ &nbsp;Acesso imediato após o pagamento</div>'
+    +'<div>✅ &nbsp;7 dias de garantia — devolução sem burocracia</div>'
+    +'<div>✅ &nbsp;Todos os bônus já inclusos</div>'
+    +'<div>✅ &nbsp;Suporte por e-mail</div>'
+    +'</div>'
+    +(precoOrig?'<div style="text-align:center;margin-bottom:4px"><span style="font-size:13px;color:rgba(255,255,255,.35);text-decoration:line-through">De '+precoOrig+'</span> <span style="background:#16a34a;color:#fff;font-size:10px;font-weight:800;padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle">DESCONTO</span></div>':''  )
+    +'<div style="text-align:center;font-size:38px;font-weight:900;color:#00d97e;line-height:1;margin-bottom:3px">'+(precoAtual||'')+'</div>'
+    +'<div style="text-align:center;font-size:12px;color:rgba(255,255,255,.35);margin-bottom:20px">Pagamento único · Sem mensalidade · Sem surpresas</div>'
+    +'<button onclick="_confirmarCkBridge()" style="width:100%;background:linear-gradient(135deg,#00d97e,#00a85e);color:#06080f;font-weight:900;font-size:17px;padding:17px;border-radius:50px;border:none;cursor:pointer;box-shadow:0 0 40px rgba(0,217,126,.45);letter-spacing:.3px" onmouseover="this.style.opacity=\'.88\'" onmouseout="this.style.opacity=\'1\'">🔒 Confirmar e ir para o pagamento</button>'
+    +'<div style="text-align:center;margin-top:11px;font-size:11px;color:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;gap:8px"><span>🔒 SSL</span><span>·</span><span>Kiwify</span><span>·</span><span>Compra 100% segura</span></div>'
+    +'</div>';
+  modal.style.display='flex';
+}
+
+function _confirmarCkBridge(){
+  if(_ckTimer)clearInterval(_ckTimer);
+  var m=document.getElementById('_ckBridge');
+  if(m)m.style.display='none';
+  if(window.innerWidth<=768){
+    window.open(_ckUrl,'_blank');
+  }else{
+    var w=540,h=740;
+    window.open(_ckUrl,'checkout','width='+w+',height='+h+',left='+Math.round((screen.width-w)/2)+',top='+Math.round((screen.height-h)/2)+',scrollbars=yes,resizable=yes');
+  }
+}
+
+function _fecharCkBridge(){
+  if(_ckTimer)clearInterval(_ckTimer);
+  var m=document.getElementById('_ckBridge');
+  if(m)m.style.display='none';
+}
+
+// Google Ads conversion + bridge modal — dispara em qualquer clique em link Kiwify
 document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(a){
-  a.addEventListener('click',function(){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
     var oc=this.getAttribute('onclick')||'';
-    var m=oc.match(/value[:\s]+([0-9.]+)/);
-    var val=m?parseFloat(m[1]):0;
+    var mVal=oc.match(/value[:\s]+([0-9.]+)/);
+    var mNome=oc.match(/item_name\s*:\s*'([^']+)'/);
+    var val=mVal?parseFloat(mVal[1]):0;
+    var nome=mNome?mNome[1].replace(/Vstack/,'').trim():'Kit Digital';
     gtag('event','conversion',{'send_to':'AW-18180464775/9GwXCNeLkLEcEIfBj91D','value':val,'currency':'BRL'});
+    abrirCheckout(this.href,nome,val);
   });
 });
 </script>
