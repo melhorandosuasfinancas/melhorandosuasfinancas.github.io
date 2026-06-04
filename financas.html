@@ -149,7 +149,7 @@
     .vsec-cta:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(59,130,246,.4)}
     .vsec-trust{margin-top:10px;font-size:12px;color:rgba(255,255,255,.35);text-align:center}
     .vwrap{position:relative;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:9/16;width:240px;box-shadow:0 0 50px rgba(59,130,246,.15),0 0 0 2px rgba(59,130,246,.15),0 24px 60px rgba(0,0,0,.7)}
-    .vwrap iframe{display:block;position:absolute;top:0;left:0;width:100%;height:100%;border:0;pointer-events:none}
+    .vwrap video{display:block;position:absolute;top:0;left:0;width:100%;height:100%;border:0;object-fit:cover}
     .voverlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:background .3s}
     .voverlay.playing{background:transparent}
     .vplay-btn{width:64px;height:64px;border-radius:50%;background:rgba(59,130,246,.85);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(59,130,246,.15);transition:transform .2s,opacity .3s}
@@ -249,10 +249,9 @@
     <!-- Vídeo vertical -->
     <div class="vsec-video">
       <div class="vwrap">
-        <iframe id="yt-kit"
-          src="https://www.youtube.com/embed/xNG_mG0SNF8?controls=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1&showinfo=0&disablekb=1&fs=0&cc_load_policy=0&autoplay=1&mute=1&loop=1&playlist=xNG_mG0SNF8"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen title="Kit Finanças Pessoais — IA Financeiro"></iframe>
+        <video id="vid-kit"
+          src="https://pub-d44ee8278c894369a4d6bdc4cbf54daa.r2.dev/financas-kit.mp4"
+          autoplay muted loop playsinline preload="auto"></video>
         <div class="voverlay" id="yt-playbtn">
           <div class="vplay-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         </div>
@@ -534,32 +533,22 @@
 
 <script>
 (function(){
-  var tag=document.createElement('script');
-  tag.src='https://www.youtube.com/iframe_api';
-  document.head.appendChild(tag);
-  var player,overlay=document.getElementById('yt-playbtn'),unmute=document.getElementById('yt-unmute');
-  window.onYouTubeIframeAPIReady=function(){
-    player=new YT.Player('yt-kit',{events:{
-      onReady:function(e){e.target.playVideo();},
-      onStateChange:function(e){
-        if(e.data===YT.PlayerState.PLAYING){overlay.classList.add('playing');}
-        else{overlay.classList.remove('playing');}
-      }
-    }});
-  };
+  var video=document.getElementById('vid-kit');
+  var overlay=document.getElementById('yt-playbtn');
+  var unmute=document.getElementById('yt-unmute');
+  if(!video)return;
+  video.addEventListener('playing',function(){if(overlay)overlay.classList.add('playing');});
+  video.addEventListener('pause',function(){if(overlay)overlay.classList.remove('playing');});
   if(overlay){
     overlay.addEventListener('click',function(){
-      if(!player)return;
-      if(player.getPlayerState()===1){player.pauseVideo();}
-      else{player.playVideo();}
+      if(video.paused){video.play();}else{video.pause();}
     });
   }
   if(unmute){
     unmute.addEventListener('click',function(e){
       e.stopPropagation();
-      if(!player)return;
-      player.unMute();
-      player.setVolume(100);
+      video.muted=false;
+      video.volume=1;
       unmute.classList.add('hidden');
     });
   }
