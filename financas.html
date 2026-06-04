@@ -6,14 +6,11 @@
   <title>Kit Finanças Pessoais com IA — Organize, Quite Dívidas e Economize em 30 Dias</title>
   <meta name="description" content="3 eBooks para organizar suas finanças, sair das dívidas e construir reserva em 30 dias. De R$103,70 por apenas R$67. Acesso imediato. Garantia 7 dias.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2300d97e'/><text y='72' x='50' text-anchor='middle' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='48' fill='%23061215'>IA</text></svg>">
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18180464775"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-18180464775');
-    gtag('config', 'AW-8376463303');     gtag('config', 'G-6YMV5JPEZK');
-  </script>
+  <script>gtag('js',new Date());gtag('config','AW-18180464775');gtag('config','AW-8376463303');</script>
+  <script src="cookie-banner.js" defer></script>
+  <script src="tiktok-pixel.js" defer></script>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -134,8 +131,74 @@
     footer a{color:var(--g);text-decoration:underline}
     .back-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--g);margin-bottom:12px}
     .back-link:hover{color:var(--w)}
+    /* VIDEO SECTION - lado a lado */
+    .vsec{padding:60px 24px;text-align:center}
+    .vsec-inner{max-width:840px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:44px;flex-wrap:wrap}
+    .vsec-video{flex-shrink:0;text-align:center}
+    .vsec-side{text-align:left;max-width:340px;flex:1;min-width:260px}
+    .vsec-kicker{display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.2);color:#93c5fd;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:14px}
+    .vsec-h{font-size:clamp(20px,3vw,28px);font-weight:900;line-height:1.15;margin-bottom:6px}
+    .vsec-h span{color:#60a5fa}
+    .vsec-sub{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:20px}
+    .vsec-bullets{display:flex;flex-direction:column;gap:16px;margin-bottom:28px}
+    .vsec-bullet{display:flex;align-items:flex-start;gap:12px}
+    .vsec-check{color:#60a5fa;font-size:20px;line-height:1.2;flex-shrink:0}
+    .vsec-btxt strong{display:block;font-weight:700;font-size:15px;margin-bottom:2px}
+    .vsec-btxt span{font-size:13px;color:rgba(255,255,255,.5)}
+    .vsec-cta{display:block;background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-weight:900;font-size:15px;padding:16px 28px;border-radius:12px;text-align:center;letter-spacing:.3px;box-shadow:0 0 30px rgba(59,130,246,.25);transition:transform .2s,box-shadow .2s}
+    .vsec-cta:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(59,130,246,.4)}
+    .vsec-trust{margin-top:10px;font-size:12px;color:rgba(255,255,255,.35);text-align:center}
+    .vwrap{position:relative;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:9/16;width:240px;box-shadow:0 0 50px rgba(59,130,246,.15),0 0 0 2px rgba(59,130,246,.15),0 24px 60px rgba(0,0,0,.7)}
+    .vwrap iframe{display:block;position:absolute;top:0;left:0;width:100%;height:100%;border:0;pointer-events:none}
+    .voverlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:background .3s}
+    .voverlay.playing{background:transparent}
+    .vplay-btn{width:64px;height:64px;border-radius:50%;background:rgba(59,130,246,.85);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(59,130,246,.15);transition:transform .2s,opacity .3s}
+    .voverlay.playing .vplay-btn{opacity:0;transform:scale(.8)}
+    .vplay-btn svg{width:26px;height:26px;fill:#fff;margin-left:4px}
+    .vunmute{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:700;padding:6px 12px;border-radius:20px;cursor:pointer;display:flex;align-items:center;gap:6px;z-index:20;white-space:nowrap;transition:opacity .3s}
+    .vunmute svg{width:14px;height:14px;fill:#fff;flex-shrink:0}
+    .vunmute.hidden{opacity:0;pointer-events:none}
+    @media(max-width:640px){.vsec-side{text-align:center}.vsec-inner{gap:28px}}
+
+    /* PROVA SOCIAL */
+    .social{padding:70px 24px;background:var(--bg2);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+    .social-inner{max-width:960px;margin:0 auto;text-align:center}
+    .social-kicker{display:inline-flex;align-items:center;gap:6px;background:rgba(245,166,35,.08);border:1px solid rgba(245,166,35,.2);color:#fcd34d;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:14px}
+    .social-h{font-size:clamp(22px,3vw,34px);font-weight:900;margin-bottom:36px}
+    .social-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+    .tcard{background:var(--bg);border:1px solid var(--bd);border-radius:16px;padding:22px;text-align:left}
+    .tcard-stars{color:var(--gold);font-size:16px;letter-spacing:-1px;margin-bottom:10px}
+    .tcard-text{font-size:14px;color:rgba(255,255,255,.75);line-height:1.65;margin-bottom:14px;font-style:italic}
+    .tcard-author{display:flex;align-items:center;gap:10px}
+    .tcard-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#1d4ed8);display:grid;place-items:center;font-weight:900;font-size:14px;color:#fff;flex-shrink:0}
+    .tcard-name{font-size:13px;font-weight:700}
+    .tcard-loc{font-size:11px;color:var(--g2)}
+
+    /* 3 KITS DA PROSPERIDADE */
+    .prosper{padding:80px 24px}
+    .prosper-inner{max-width:960px;margin:0 auto;text-align:center}
+    .prosper-kicker{display:inline-flex;align-items:center;gap:6px;background:rgba(245,166,35,.08);border:1px solid rgba(245,166,35,.2);color:#fcd34d;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:14px}
+    .prosper-h{font-size:clamp(24px,3.5vw,38px);font-weight:900;line-height:1.15;margin-bottom:10px}
+    .prosper-sub{font-size:16px;color:var(--g);margin-bottom:48px}
+    .pkits{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:880px;margin:0 auto}
+    .pkit{background:var(--bg2);border:1px solid var(--bd);border-radius:20px;padding:28px;text-align:center;position:relative;transition:border-color .2s,transform .2s}
+    .pkit:hover{border-color:rgba(59,130,246,.3);transform:translateY(-4px)}
+    .pkit.featured{border-color:rgba(59,130,246,.35);background:var(--bg3)}
+    .pkit-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 14px;border-radius:20px;white-space:nowrap}
+    .pkit-icon{font-size:36px;margin-bottom:12px}
+    .pkit-name{font-size:18px;font-weight:900;margin-bottom:4px}
+    .pkit-desc{font-size:13px;color:var(--g);margin-bottom:16px}
+    .pkit-items{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;text-align:left}
+    .pkit-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.7)}
+    .pkit-item i{color:#60a5fa;font-size:14px;flex-shrink:0}
+    .pkit-old{font-size:13px;color:var(--g2);text-decoration:line-through;margin-bottom:2px}
+    .pkit-price{font-size:38px;font-weight:900;color:#60a5fa;line-height:1;margin-bottom:4px}
+    .pkit-price small{font-size:16px;font-weight:700;vertical-align:top;margin-top:6px;display:inline-block}
+    .pkit-note{font-size:11px;color:var(--g2);margin-bottom:16px}
+    .pkit-btn{display:block;background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-weight:800;font-size:14px;padding:14px;border-radius:12px;transition:opacity .2s;box-shadow:0 4px 20px rgba(59,130,246,.3)}
+    .pkit-btn:hover{opacity:.85}
+    .pkit.featured .pkit-btn{background:linear-gradient(135deg,#f59e0b,#d97706);box-shadow:0 4px 20px rgba(245,158,11,.3)}
   </style>
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1526259465562386');fbq('track','PageView');</script><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1526259465562386&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
 
@@ -177,6 +240,55 @@
       <span class="hti"><i class="ri-shield-check-fill"></i> Garantia 7 dias</span>
       <span class="hti"><i class="ri-flashlight-fill"></i> Acesso imediato</span>
       <span class="hti"><i class="ri-lock-2-fill"></i> Pagamento seguro</span>
+    </div>
+  </div>
+</section>
+
+<section class="vsec">
+  <div class="vsec-inner">
+    <!-- Vídeo vertical -->
+    <div class="vsec-video">
+      <div class="vwrap">
+        <iframe id="yt-kit"
+          src="https://www.youtube.com/embed/xNG_mG0SNF8?controls=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1&showinfo=0&disablekb=1&fs=0&cc_load_policy=0&autoplay=1&mute=1&loop=1&playlist=xNG_mG0SNF8"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen title="Kit Finanças Pessoais — IA Financeiro"></iframe>
+        <div class="voverlay" id="yt-playbtn">
+          <div class="vplay-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="vunmute" id="yt-unmute">
+          <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+          Toque para ativar o som
+        </div>
+      </div>
+    </div>
+    <!-- Lado direito: título, benefícios, CTA -->
+    <div class="vsec-side">
+      <div class="vsec-kicker">▶ Veja antes de comprar</div>
+      <h2 class="vsec-h">O método que organiza suas <span>finanças em 30 dias</span> com IA</h2>
+      <p class="vsec-sub">Do planejamento ao controle de dívidas — tudo junto.</p>
+      <div class="vsec-bullets">
+        <div class="vsec-bullet">
+          <span class="vsec-check">✓</span>
+          <div class="vsec-btxt"><strong>Sem complicação</strong><span>Linguagem simples, do zero ao avançado</span></div>
+        </div>
+        <div class="vsec-bullet">
+          <span class="vsec-check">✓</span>
+          <div class="vsec-btxt"><strong>3 eBooks completos</strong><span>Planejamento, Dívidas e Finanças com IA</span></div>
+        </div>
+        <div class="vsec-bullet">
+          <span class="vsec-check">✓</span>
+          <div class="vsec-btxt"><strong>+100 prompts prontos</strong><span>Use IA agora para controlar seu dinheiro</span></div>
+        </div>
+        <div class="vsec-bullet">
+          <span class="vsec-check">✓</span>
+          <div class="vsec-btxt"><strong>Acesso imediato</strong><span>Baixe agora e comece ainda hoje</span></div>
+        </div>
+      </div>
+      <a href="https://pay.kiwify.com.br/t5mj2Et" class="vsec-cta" target="_blank" onclick="gtag('event','vsec_cta_click',{kit:'financas'})">
+        💳 Quero o Kit Finanças — R$67
+      </a>
+      <p class="vsec-trust">🔒 Pagamento seguro · Kiwify · Garantia de 7 dias</p>
     </div>
   </div>
 </section>
@@ -264,6 +376,96 @@
   <div class="tbi"><i class="ri-customer-service-2-fill"></i><span><strong>Suporte</strong> pelo WhatsApp</span></div>
 </div>
 
+<!-- PROVA SOCIAL -->
+<section class="social">
+  <div class="social-inner">
+    <div class="social-kicker">⭐ Depoimentos reais</div>
+    <h2 class="social-h">O que dizem quem já transformou as finanças</h2>
+    <div class="social-grid">
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">"Comecei aplicando o método do Planejamento em 30 Dias e em 3 semanas já tinha tudo organizado. Consegui juntar minha primeira reserva de emergência."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">A</div>
+          <div><div class="tcard-name">Amanda R.</div><div class="tcard-loc">São Paulo, SP</div></div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">"O Diga Adeus às Dívidas me ajudou a sair do vermelho em 45 dias. Linguagem simples, fui direto ao passo a passo e funcionou de verdade."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">C</div>
+          <div><div class="tcard-name">Carlos M.</div><div class="tcard-loc">Belo Horizonte, MG</div></div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">"Os prompts prontos do Finanças com IA me pouparam horas. Uso IA agora todo mês para controlar orçamento. Vale muito mais do que o preço cobrado."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">F</div>
+          <div><div class="tcard-name">Fernanda L.</div><div class="tcard-loc">Curitiba, PR</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 KITS DA PROSPERIDADE -->
+<section class="prosper" id="kits-prosperidade">
+  <div class="prosper-inner">
+    <div class="prosper-kicker">🏆 Kits da Prosperidade</div>
+    <h2 class="prosper-h">Escolha sua jornada de<br>transformação financeira</h2>
+    <p class="prosper-sub">Kits completos — cada um pensado para uma etapa da sua jornada</p>
+    <div class="pkits">
+      <div class="pkit">
+        <div class="pkit-icon">🌱</div>
+        <div class="pkit-name">Kit Starter</div>
+        <div class="pkit-desc">Para quem está começando a organizar as finanças do zero</div>
+        <div class="pkit-items">
+          <div class="pkit-item"><i class="ri-checkbox-circle-fill"></i> 3 eBooks essenciais</div>
+          <div class="pkit-item"><i class="ri-checkbox-circle-fill"></i> Método passo a passo</div>
+          <div class="pkit-item"><i class="ri-checkbox-circle-fill"></i> Acesso imediato</div>
+        </div>
+        <div class="pkit-old">De R$103,70</div>
+        <div class="pkit-price"><small>R$</small>67</div>
+        <div class="pkit-note">à vista · PIX ou cartão</div>
+        <a href="https://pay.kiwify.com.br/6lm6Iih" class="pkit-btn" target="_blank" onclick="gtag('event','purchase',{value:67,currency:'BRL',items:[{item_name:'Kit Starter'}]})">Quero o Kit Starter</a>
+      </div>
+      <div class="pkit featured">
+        <div class="pkit-badge">⭐ Mais Escolhido</div>
+        <div class="pkit-icon">🚀</div>
+        <div class="pkit-name">Kit Acelerador</div>
+        <div class="pkit-desc">Para quem quer resultados mais rápidos e abrangentes</div>
+        <div class="pkit-items">
+          <div class="pkit-item"><i class="ri-checkbox-circle-fill"></i> 9 eBooks premium</div>
+          <div class="pkit-item"><i class="ri-checkbox-circle-fill"></i> Finanças + Renda + Marketing</div>
+          <div class="pkit-item"><i class="ri-checkbox-circle-fill"></i> +100 prompts de IA prontos</div>
+          <div class="pkit-item"><i class="ri-checkbox-circle-fill"></i> Acesso imediato</div>
+        </div>
+        <div class="pkit-old">De R$369,10</div>
+        <div class="pkit-price"><small>R$</small>147</div>
+        <div class="pkit-note">à vista · PIX ou cartão</div>
+        <a href="https://pay.kiwify.com.br/6rVEIGm" class="pkit-btn" target="_blank" onclick="gtag('event','purchase',{value:147,currency:'BRL',items:[{item_name:'Kit Acelerador'}]})">Quero o Kit Acelerador</a>
+      </div>
+      <div class="pkit">
+        <div class="pkit-icon">💎</div>
+        <div class="pkit-name">Jornada Completa</div>
+        <div class="pkit-desc">Para quem quer transformação total — finanças, renda e investimentos</div>
+        <div class="pkit-items">
+          <div class="pkit-item"><i class="ri-checkbox-circle-fill"></i> 12 eBooks — coleção completa</div>
+          <div class="pkit-item"><i class="ri-checkbox-circle-fill"></i> Finanças + Renda + Marketing + IA</div>
+          <div class="pkit-item"><i class="ri-checkbox-circle-fill"></i> Bônus: 7 dias no App IA Financeiro</div>
+          <div class="pkit-item"><i class="ri-checkbox-circle-fill"></i> Acesso vitalício imediato</div>
+        </div>
+        <div class="pkit-old">De R$521,70</div>
+        <div class="pkit-price"><small>R$</small>197</div>
+        <div class="pkit-note">à vista · PIX ou cartão</div>
+        <a href="https://pay.kiwify.com.br/vsIk65Y" class="pkit-btn" target="_blank" onclick="gtag('event','purchase',{value:197,currency:'BRL',items:[{item_name:'Kit Jornada Completa'}]})">Quero a Jornada Completa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq">
   <div style="text-align:center;margin-bottom:32px">
@@ -304,6 +506,8 @@
   <br>
   © 2026 IA Financeiro. Todos os direitos reservados.<br>
   <a href="https://meuiafinanceiro.com.br">meuiafinanceiro.com.br</a>
+  <br><br>
+  <a href="https://meuiafinanceiro.com.br/privacidade.html" target="_blank">Política de Privacidade</a> · <a href="https://meuiafinanceiro.com.br/termos.html" target="_blank">Termos de Uso</a>
 </footer>
 
 <script>
@@ -326,6 +530,57 @@
       item.classList.toggle('open');
     });
   });
+</script>
+
+<script>
+(function(){
+  var tag=document.createElement('script');
+  tag.src='https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+  var player,overlay=document.getElementById('yt-playbtn'),unmute=document.getElementById('yt-unmute');
+  window.onYouTubeIframeAPIReady=function(){
+    player=new YT.Player('yt-kit',{events:{
+      onReady:function(e){e.target.playVideo();},
+      onStateChange:function(e){
+        if(e.data===YT.PlayerState.PLAYING){overlay.classList.add('playing');}
+        else{overlay.classList.remove('playing');}
+      }
+    }});
+  };
+  if(overlay){
+    overlay.addEventListener('click',function(){
+      if(!player)return;
+      if(player.getPlayerState()===1){player.pauseVideo();}
+      else{player.playVideo();}
+    });
+  }
+  if(unmute){
+    unmute.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(!player)return;
+      player.unMute();
+      player.setVolume(100);
+      unmute.classList.add('hidden');
+    });
+  }
+})();
+</script>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5511950894975?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20eBooks." target="_blank" style="position:fixed;bottom:24px;right:24px;z-index:9990;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" aria-label="Falar no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+(function(){
+  document.querySelectorAll('a[href*="kiwify.com.br"],a[href*="hotmart.com"]').forEach(function(a){
+    a.addEventListener('click',function(){
+      if(typeof gtag==='function'){
+        gtag('event','conversion',{'send_to':'AW-18180464775/z4VGCNTd-7UcEIfBj91D','value':67,'currency':'BRL'});
+      }
+    });
+  });
+})();
 </script>
 </body>
 </html>
