@@ -187,16 +187,14 @@
     <!-- Vídeo vertical -->
     <div class="vsec-video">
       <div class="vwrap">
-        <iframe id="yt-kit"
-          src="https://www.youtube.com/embed/HaZXH-n9Fdk?controls=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1&showinfo=0&disablekb=1&fs=0&cc_load_policy=0&autoplay=1&mute=1&loop=1&playlist=HaZXH-n9Fdk"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen title="Kit Renda Extra — IA Financeiro"></iframe>
-        <div class="voverlay" id="yt-playbtn">
-          <div class="vplay-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <div class="vunmute" id="yt-unmute">
-          <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
-          Toque para ativar o som
+        <video id="vid-rendaextra"
+          src="https://pub-d44ee8278c894369a4d6bdc4cbf54daa.r2.dev/rendaextra.mp4"
+          autoplay muted loop playsinline
+          style="display:block;position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border:0;">
+        </video>
+        <div id="unmute-rendaextra" onclick="var v=document.getElementById('vid-rendaextra');v.muted=false;v.volume=1;this.style.display='none';" style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.85) 60%,transparent);padding:20px 12px 14px;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;z-index:10;">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#00d97e;flex-shrink:0"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+          <span style="color:#fff;font-size:13px;font-weight:800;letter-spacing:0.5px;">🔊 Toque para ativar o som</span>
         </div>
       </div>
     </div>
@@ -404,39 +402,6 @@
   });
 </script>
 
-<script>
-(function(){
-  var tag=document.createElement('script');
-  tag.src='https://www.youtube.com/iframe_api';
-  document.head.appendChild(tag);
-  var player,overlay=document.getElementById('yt-playbtn'),unmute=document.getElementById('yt-unmute');
-  window.onYouTubeIframeAPIReady=function(){
-    player=new YT.Player('yt-kit',{events:{
-      onReady:function(e){e.target.playVideo();},
-      onStateChange:function(e){
-        if(e.data===YT.PlayerState.PLAYING){overlay.classList.add('playing');}
-        else{overlay.classList.remove('playing');}
-      }
-    }});
-  };
-  if(overlay){
-    overlay.addEventListener('click',function(){
-      if(!player)return;
-      if(player.getPlayerState()===1){player.pauseVideo();}
-      else{player.playVideo();}
-    });
-  }
-  if(unmute){
-    unmute.addEventListener('click',function(e){
-      e.stopPropagation();
-      if(!player)return;
-      player.unMute();
-      player.setVolume(100);
-      unmute.classList.add('hidden');
-    });
-  }
-})();
-</script>
 
 <!-- WHATSAPP FLUTUANTE -->
 <a href="https://wa.me/5511950894975?text=Ol%C3%A1!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20eBooks." target="_blank" style="position:fixed;bottom:24px;right:24px;z-index:9990;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" aria-label="Falar no WhatsApp">
